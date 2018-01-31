@@ -12,8 +12,8 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="loading">
-    <ion-spinner margin-auto name="bubbles"></ion-spinner>
+  <div *ngIf="loading" class="ionic-spinner">
+    <ion-spinner margin-auto name="bubbles" class="ionic-spinner-bubbles"></ion-spinner>
   </div>
   <div *ngIf="!loading">
     <ion-list>
