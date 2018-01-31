@@ -14,5 +14,14 @@
 
 
 <ion-content padding>
-
+  <ion-card>
+    <img [src]="post.data.thumbnail" >
+    <ion-card-content>
+      <ion-card-title>
+        {{post.data.title}}
+      </ion-card-title>
+      <p>By: {{post.data.author}}</p>
+      <p clear>Ups: {{post.data.ups}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
