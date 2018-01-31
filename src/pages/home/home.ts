@@ -19,21 +19,23 @@ export class HomePage {
     this.getData();
   }
 
+  goToDetailPage(post: any){
+    this.navCtrl.push('DetailPage', { 
+      post 
+    });
+  }
+
   getData(){
     this.loading = true;
 
     this.dataProvider.getDataFromReddit()
         .then((response: any) => {
-          this.posts = response.data.children;
           this.loading = false;
+          this.posts = response.data.children;
         })
         .catch(error => {
           console.log(error);
         });
-
-    if (this.loading){
-      this.getData();
-    }
   }
 
 }

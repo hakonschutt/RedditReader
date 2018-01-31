@@ -15,11 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailPage {
 
+  post: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.post = navParams.get('post');
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
-  }
-
 }
