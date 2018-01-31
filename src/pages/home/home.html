@@ -17,7 +17,7 @@
   </div>
   <div *ngIf="!loading">
     <ion-list>
-      <ion-item *ngFor="let post of posts" (click)="goToDetailPage(post)">
+      <ion-item *ngFor="let post of posts" (click)="goToDetailPage(post)" no-padding>
         <ion-thumbnail item-start>
           <img [src]="post.data.thumbnail" >
         </ion-thumbnail>
