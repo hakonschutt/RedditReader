@@ -1,17 +1,28 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar padding>
     <ion-title>
       Reddit Reader
     </ion-title>
-    <button>
-      <ion-icon name="ion-refresh"></ion-icon>
-    </button>
+    <ion-buttons end>
+      <button ion-button icon-only float-right color="blue" (click)="getData()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div *ngIf="loading">
+    <h1>Loading...</h1>
+  </div>
+  <ion-list *ngIf="!loading">
+    <ion-item *ngFor="let post of posts">
+      <ion-thumbnail item-start>
+        <img [src]="post.data.thumbnail" >
+      </ion-thumbnail>
+      <h2 text-wrap>{{post.data.title}}</h2>
+      <p>By: {{post.data.author}}</p>
+      <p clear item-end>Ups: {{post.data.ups}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
